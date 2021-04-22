@@ -1,0 +1,22 @@
+Jest: Jest is also a popular testing framework that is known for its simplicity. It is developed and maintained regularly by Facebook. One of the key features of jest is it is well documented, and it supports parallel test running i.e. each test will run in their own processes to maximize performance. It also includes several features like test watching, coverage, and snapshots.
+You can install it using the following command:
+
+npm install --save-dev jest
+Note: By default, Jest expects to find all the test files in a folder called “__tests__” in your root folder.
+
+Example:
+
+describe("Testing with Jest", () => {
+  test("Addition", () => {
+    const sum = 2 + 3;
+    const expectedResult = 5;
+    expect(sum).toEqual(expectedResult);
+  });
+    
+  // Jest also allows a test to run multiple
+  // times using different values
+  test.each([[1, 1, 2], [-1, 1, 0], [3, 2, 6]])(
+  'Does %i + %i equals %i', (a, b, expectedResult) => {
+    expect(a + b).toBe(expectedResult);
+  });
+});
